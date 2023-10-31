@@ -26,6 +26,9 @@
         <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
         <!-- Disable collisions for hand_sc by default (with environment) -->
         <disable_default_collisions link="$(arg arm_id)_hand_sc" />
+        <!-- Disable finger collisions to slack contraint for grasp detection models -->
+        <disable_default_collisions link="$(arg arm_id)_leftfinger" />
+        <disable_default_collisions link="$(arg arm_id)_rightfinger" />
         <!-- Reenable collision of hand_sc for selected arm sc links -->
         <xacro:property name="link_fmt" value="$(arg arm_id)_link{}_sc" />
         <xacro:enable_collisions_for link="$(arg arm_id)_hand_sc" others="${[link_fmt.format(i) for i in [0,1,2,3]]}" />
