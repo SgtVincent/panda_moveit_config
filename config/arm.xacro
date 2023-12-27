@@ -31,7 +31,7 @@
     </xacro:macro>
 
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="$(arg arm_id)_link0" />
+    <!-- <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="$(arg arm_id)_link0" /> -->
 
     <xacro:macro name="disable_collisions_for" params="link:=^ others:=^">
         <xacro:if value="${others}">
