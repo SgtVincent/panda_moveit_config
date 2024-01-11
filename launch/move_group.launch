@@ -18,7 +18,7 @@
   <arg name="fake_execution_type" default="interpolate"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="publish_monitored_planning_scene" default="true"/>
-
+  <arg name="sensors_config_file" default=""/>
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
 
@@ -88,6 +88,7 @@
   <!-- Sensors Functionality -->
   <include ns="move_group" file="$(dirname)/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="panda" />
+    <arg name="sensors_config_file" value="$(arg sensors_config_file)" />
   </include>
 
   <!-- Start the actual move_group node/action server -->
